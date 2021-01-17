@@ -13,6 +13,8 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+        <link rel="icon" href="{{ asset('/storage/logo-only.png') }}">
+
         @livewireStyles
 
         <!-- Scripts -->
