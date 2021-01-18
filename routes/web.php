@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\FoodController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,17 +20,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+Route::middleware(['auth:sanctum', 'verified', 'auth.admin'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/order', function () {
-        return view('order');
-    })->name('order');
-    Route::get('/food', function () {
-        return view('food');
-    })->name('food');
-    Route::get('/customer', function () {
-        return view('customer');
-    })->name('customer');
+
+    Route::resource('/transaction', TransactionController::class);
+    Route::resource('/food', FoodController::class);
+    Route::resource('/user', UserController::class);
 });
