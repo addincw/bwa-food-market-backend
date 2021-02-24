@@ -55,4 +55,16 @@
             </div>
         </div>
     </div>
+
+    <x-jet-dialog-modal>
+        <x-slot name="title">
+            Form Food
+        </x-slot>
+        <x-slot name="content">
+            Content Form Food
+        </x-slot>
+        <x-slot name="footer">
+            Footer Form Food
+        </x-slot>
+    </x-jet-dialog-modal>
 </x-app-layout>
